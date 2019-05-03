@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif, helvetica;
+    height: 100vh;
+    background-color: #7EC969;
+  }
+main {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+header {
+    text-align: center;
+    font-size: 9vmin;
+    margin: 2vw;
+    padding-top: 5vmin;
+}
+#scoreboard {
+    margin-top: -5vh;
+    padding-bottom: 2vh;
+    display: flex;
+}
+#scoreboard > span {
+    padding: 12vmin;
+    text-align: center;
+    font-size: 3vmin;
+
+}
+.holes {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+.hole {
+    background: #55380B;
+    border-radius: 50%;
+    width: 10vmax;
+    height: 5vmax;
+    margin:  0 5vmin;
+} 
+
+
+
+
+
+
+
+
+
+
+/* button {
+    margin: 40px auto;
+    display: block;
+    height: 40px;
+    width: 130px;
+    background-color: #FFAA40;
+    font-size: 20px;
+} */
+
