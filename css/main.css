@@ -6,22 +6,28 @@ body {
     font-family: 'Merriweather', serif, helvetica;
     height: 100vh;
     background-color: #7EC969;
+    
   }
 main {
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-top: 5vmin;
 }
 header {
     text-align: center;
     font-size: 9vmin;
-    margin: 2vw;
-    padding-top: 5vmin;
+    margin: 3vw;
+    padding-top: 6vmin;
+    font-weight: 100;
 }
 #scoreboard {
-    margin-top: -5vh;
+    margin-top: -10vh;
+    margin-bottom: -8vh;
     padding-bottom: 2vh;
     display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 #scoreboard > span {
     padding: 12vmin;
@@ -33,30 +39,35 @@ header {
     display: flex;
     flex-flow: row;
     justify-content: center;
+    position: relative;
 }
 .hole {
     background: #55380B;
     border-radius: 50%;
-    width: 10vmax;
-    height: 5vmax;
-    margin:  0 5vmin;
+    width: 13vmax;
+    height: 10vmax;
+    margin: 2vmin 7vmin;
+    padding-top: 2vmin;
 } 
-
-
-
-
-
-
-
-
-
-
-/* button {
-    margin: 40px auto;
+button {
+    margin: 8vmin auto;
     display: block;
-    height: 40px;
-    width: 130px;
-    background-color: #FFAA40;
-    font-size: 20px;
-} */
+    height: 7vmin;
+    width: 200px;
+    background-color: #EEC47D;
+    font-size: 5vmin;
+    border: 1px solid black;
+    font-family: helvetica;
+}
+body {
+    min-height: 20%;
+    min-width: 20%;
+}
+
+
+
+
+
+
+
 
