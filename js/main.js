@@ -29,10 +29,15 @@ function generateRandNum(min,max) {
 }
 function generateMole() {
     var rndNum = generateRandNum(0,6);
-    setInterval(function() {
-       hole[rndNum].style.backgroundColor = 'red';
-    },1000);
-    console.log("Generating moles..",rndNum);
+    var currentHole = hole[rndNum]
+    currentHole.style.backgroundColor = 'red';
+    var removeMole = setInterval(function(){
+        if(currentHole.style.backgroundColor = 'red'){
+            currentHole.style.backgroundColor = '#55380B';
+            clearInterval(removeMole)
+        }
+    },500);
+    console.log("Generating moles..", 'mole position ' + rndNum);
 }
 function handleMove() {
     console.log('click works',this)
@@ -45,9 +50,13 @@ function timer() {
     timeMsg.textContent = ` time: ${time}`;
     if (time === 0) {
         console.log('Times up!')
+        initialize()
         clearInterval(startInt)
     }
-  },time);
+  },1000);
+}
+function resetBoard() {
+    time = 60
 }
 function render() {
     gameLive = true;
