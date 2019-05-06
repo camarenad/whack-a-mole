@@ -59,10 +59,10 @@ function resetBoard() {
     time = 60
 }
 function render() {
+    if(!gameLive) {
     gameLive = true;
     timer();
-  // if time > 0 update scoreboard
-    // generateMole()
+    }
 }
 function initialize() {
     hit = 0;
