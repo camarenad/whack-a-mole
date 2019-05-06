@@ -36,11 +36,21 @@ function generateMole() {
             currentHole.style.backgroundColor = '#55380B';
             clearInterval(removeMole)
         }
-    },500);
+    },700);
     console.log("Generating moles..", 'mole position ' + rndNum);
 }
 function handleMove() {
-    console.log('click works',this)
+    if(this.style.backgroundColor != 'red'){
+        console.log("miss: ", miss, "hit: ", hit)
+        missMsg.textContent = ` miss: ${miss++}`
+    }
+    if(this.style.backgroundColor === 'red'){
+        hitMsg.textContent = ` hit: ${hit++}`
+        console.log("miss: ", miss, "hit: ", hit)
+    }
+
+    console.log('click works',this.style.backgroundColor)
+
 }
 function timer() {
   var startInt = setInterval(function() {
