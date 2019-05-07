@@ -12,6 +12,7 @@ var missMsg = document.querySelector('.miss');
 var timeMsg = document.querySelector('.time');
 var hole = document.querySelectorAll('.hole')
 var button = document.querySelectorAll('button')
+var winMsg = document.getElementById('final-score')
 
 // /*----- event listeners -----*/ 
 hole.forEach(function(element) {
@@ -30,21 +31,30 @@ function generateRandNum(min,max) {
 function generateMole() {
     var rndNum = generateRandNum(0,6);
     var currentHole = hole[rndNum]
-    currentHole.style.backgroundColor = 'red';
+    currentHole.className += ' active'
+    var img = document.createElement('img');
+    img.src = assets['moleImg']
+    img.style.height = '130%';
+    img.style.width = '150%';
+    currentHole.style.backgroundColor ='transparent'
+    currentHole.appendChild(img);
+
     var removeMole = setInterval(function(){
-        if(currentHole.style.backgroundColor = 'red'){
-            currentHole.style.backgroundColor = '#55380B';
+        if(currentHole.classList.contains('active')){
+            currentHole.removeChild(img);
+            currentHole.style.backgroundColor = '#55380B'
+            currentHole.classList.remove('active')
             clearInterval(removeMole)
         }
     },800);
     console.log("Generating moles..", 'mole position ' + rndNum);
 }
 function handleMove() {
-    if(this.style.backgroundColor != 'red' && gameLive === true){
+    if(!this.classList.contains('active') && gameLive === true){
         console.log("miss: ", miss, "hit: ", hit)
         missMsg.textContent = ` miss: ${miss++}`
     }
-    if(this.style.backgroundColor === 'red' && gameLive === true){
+    if(this.classList.contains('active') && gameLive === true){
         hitMsg.textContent = ` hit: ${hit++}`
         console.log("miss: ", miss, "hit: ", hit)
     }
@@ -60,7 +70,8 @@ function timer() {
     timeMsg.textContent = ` time: ${time}`;
     if (time === 0) {
         console.log('Times up!')
-        alert(`Total Hits ${hit} Total Misses ${miss}`)
+        // alert()
+        winMsg.textContent = `Total Hits ${hit}   Total Misses ${miss}`;
         initialize()
         clearInterval(startInt)
     }
@@ -69,6 +80,7 @@ function timer() {
 function render() {
     if(!gameLive) {
     gameLive = true;
+    winMsg.textContent = ""
     timer();
     }
 }

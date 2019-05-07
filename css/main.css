@@ -48,6 +48,7 @@ header {
     height: 10vmax;
     margin: 2vmin 7vmin;
     padding-top: 2vmin;
+    
 } 
 button {
     margin: 8vmin auto;
@@ -59,8 +60,22 @@ button {
     border: 1px solid black;
     font-family: helvetica;
 }
-
-
+.hole.active  {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: auto 0;
+  margin-bottom: 120px;
+}
+#final-score {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    padding: 2vmin;
+    padding-bottom: 8vmin;
+    font-size: 3vmin;
+}
 
 
 
