@@ -36,15 +36,15 @@ function generateMole() {
             currentHole.style.backgroundColor = '#55380B';
             clearInterval(removeMole)
         }
-    },700);
+    },800);
     console.log("Generating moles..", 'mole position ' + rndNum);
 }
 function handleMove() {
-    if(this.style.backgroundColor != 'red'){
+    if(this.style.backgroundColor != 'red' && gameLive === true){
         console.log("miss: ", miss, "hit: ", hit)
         missMsg.textContent = ` miss: ${miss++}`
     }
-    if(this.style.backgroundColor === 'red'){
+    if(this.style.backgroundColor === 'red' && gameLive === true){
         hitMsg.textContent = ` hit: ${hit++}`
         console.log("miss: ", miss, "hit: ", hit)
     }
@@ -60,13 +60,11 @@ function timer() {
     timeMsg.textContent = ` time: ${time}`;
     if (time === 0) {
         console.log('Times up!')
+        alert(`Total Hits ${hit} Total Misses ${miss}`)
         initialize()
         clearInterval(startInt)
     }
   },1000);
-}
-function resetBoard() {
-    time = 60
 }
 function render() {
     if(!gameLive) {
@@ -77,7 +75,6 @@ function render() {
 function initialize() {
     hit = 0;
     miss = 0;
-    // time * 1000 => seconds to milliseconds
     time = 60;
     gameLive = false;
     hitMsg.textContent= `hit: ${hit}`;
