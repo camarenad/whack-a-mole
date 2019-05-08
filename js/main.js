@@ -34,7 +34,7 @@ function generateMole() {
     currentHole.className += ' active'
     var img = document.createElement('img');
     img.src = assets['moleImg']
-    img.style.height = '130%';
+    img.style.height = '100%';
     img.style.width = '150%';
     currentHole.style.backgroundColor ='transparent'
     currentHole.appendChild(img);
