@@ -34,7 +34,7 @@ function generateMole() {
     currentHole.className += ' active'
     var img = document.createElement('img');
     img.src = assets['moleImg']
-    img.style.height = '100%';
+    img.style.height = '130%';
     img.style.width = '150%';
     currentHole.style.backgroundColor ='transparent'
     currentHole.appendChild(img);
@@ -59,6 +59,7 @@ function handleMove() {
         console.log("miss: ", miss, "hit: ", hit)
     }
 
+
     console.log('click works',this.style.backgroundColor)
 
 }
@@ -71,7 +72,7 @@ function timer() {
     if (time === 0) {
         console.log('Times up!')
         // alert()
-        winMsg.textContent = `Total Hits ${hit}   Total Misses ${miss}`;
+        winMsg.textContent = `Total Hits ${hit} || Total Misses ${miss}`;
         initialize()
         clearInterval(startInt)
     }
