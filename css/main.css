@@ -70,20 +70,22 @@ button:hover {
   margin: auto 0;
   margin-bottom: 120px; */
   transition: opacity  .5s ease-in-out;
-  animation: slideup .3s;
+  animation: slide-up .3s;
   /* position: relative; */
     /* margin-top: -5vh; */
   /* align-self:flex-start; */
 }
-@keyframes slideup {
-    25% {top:1220%;}
-    40% {top:40%;}
-    50% {top:60%;} 
-    75% {top:75%;} 
-    100% {top:100%;}
-    100% {bottom:1020%;}
-
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 #final-score {
     display: flex;
     justify-content: center;
