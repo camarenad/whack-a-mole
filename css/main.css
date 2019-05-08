@@ -64,22 +64,24 @@ button:hover {
     background-color: #EFAB7D;
 }
 .hole.active  {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-content: center;
   margin: auto 0;
-  margin-bottom: 120px;
+  margin-bottom: 120px; */
   transition: opacity  .5s ease-in-out;
   animation: slideup .3s;
-  position: relative;
+  /* position: relative; */
+    /* margin-top: -5vh; */
+  /* align-self:flex-start; */
 }
 @keyframes slideup {
-    25% {top:20%;}
+    25% {top:1220%;}
     40% {top:40%;}
     50% {top:60%;} 
     75% {top:75%;} 
     100% {top:100%;}
-    100% {bottom:100%;}
+    100% {bottom:1020%;}
 
 }
 #final-score {
@@ -100,10 +102,13 @@ button:hover {
   align-content: center;
   width: 100%;
 }
-.active {
- overflow: inherit;
+
+img {
+    margin-top: -2vh;
+    margin-left: -2vh;
 }
- 
+
+
 
 
 
