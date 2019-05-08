@@ -18,7 +18,7 @@ header {
     text-align: center;
     font-size: 9vmin;
     margin: 3vw;
-    padding-top: 6vmin;
+    padding-top: 5vmin;
     font-weight: 100;
 }
 #scoreboard {
@@ -30,7 +30,7 @@ header {
     
 }
 #scoreboard > span {
-    padding: 12vmin;
+    padding: 10vmin;
     text-align: center;
     font-size: 3vmin;
 
@@ -39,16 +39,15 @@ header {
     display: flex;
     flex-flow: row;
     justify-content: center;
-    position: relative;
-    
+    position: relative;  
 }
 .hole {
     background: #55380B;
     border-radius: 50%;
-    width: 14vmax;
-    height: 11vmax;
+    width: 12vmax;
+    height: 10vmax;
     margin: 2vmin 7vmin;
-    padding-top: 2vmin;    
+    padding-top: 2vmin;
 } 
 button {
     margin: 8vmin auto;
@@ -70,13 +69,13 @@ button:hover {
   align-content: center;
   margin: auto 0;
   margin-bottom: 120px;
-  transition: ease-in-out;
-  animation: slideup .030s;
+  transition: opacity  .5s ease-in-out;
+  animation: slideup .3s;
   position: relative;
 }
 @keyframes slideup {
     25% {top:20%;}
-    40% {top:30%;}
+    40% {top:40%;}
     50% {top:60%;} 
     75% {top:75%;} 
     100% {top:100%;}
@@ -101,7 +100,9 @@ button:hover {
   align-content: center;
   width: 100%;
 }
-
+.active {
+ overflow: inherit;
+}
  
 
 

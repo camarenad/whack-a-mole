@@ -46,7 +46,7 @@ function generateMole() {
             currentHole.classList.remove('active')
             clearInterval(removeMole)
         }
-    },800);
+    },700);
     console.log("Generating moles..", 'mole position ' + rndNum);
 }
 function handleMove() {
