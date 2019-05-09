@@ -13,6 +13,7 @@ var timeMsg = document.querySelector('.time');
 var hole = document.querySelectorAll('.hole');
 var button = document.querySelectorAll('button');
 var winMsg = document.getElementById('final-score');
+var holeSection = document.getElementById('hole-section');
 
 // /*----- event listeners -----*/ 
 hole.forEach(function(element) {
@@ -22,7 +23,6 @@ document.querySelector('button').addEventListener('click',render)
 
 /*----- functions -----*/
 initialize()
-
 
 function generateRandNum(min,max) {
     min = Math.ceil(min);
@@ -43,28 +43,23 @@ function generateMole() {
 
     var removeMole = setInterval(function(){
         if(currentHole.classList.contains('active')){
-            // debugger
             currentHole.removeChild(img);
             currentHole.style.backgroundColor = '#55380B'
             currentHole.classList.remove('active')
             clearInterval(removeMole)
         }
     },700);
-    console.log("Generating moles..", 'mole position ' + rndNum);
 }
 function handleMove() {
     if(!this.classList.contains('active') && gameLive === true){
         console.log("miss: ", miss, "hit: ", hit)
         missMsg.textContent = ` miss: ${miss++}`
+
     }
     if(this.classList.contains('active') && gameLive === true){
+        var self = this;
         hitMsg.textContent = ` hit: ${hit++}`
-        console.log("miss: ", miss, "hit: ", hit)
     }
-
-
-    console.log('click works',this.style.backgroundColor)
-
 }
 function timer() {
   var startInt = setInterval(function() {
@@ -73,7 +68,6 @@ function timer() {
     time --
     timeMsg.textContent = ` time: ${time}`;
     if (time === 0) {
-        console.log('Times up!')
         winMsg.textContent = `Total Hits ${hit} || Total Misses ${miss}`;
         initialize()
         clearInterval(startInt)
@@ -95,5 +89,4 @@ function initialize() {
     hitMsg.textContent= `hit: ${hit}`;
     missMsg.textContent = `miss: ${miss}`;
     timeMsg.textContent = `time: ${time}`;
-    console.log('init works')
 }
