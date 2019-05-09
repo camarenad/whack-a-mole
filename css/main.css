@@ -63,7 +63,7 @@ button {
 button:hover {
     background-color: #EFAB7D;
 }
-.hole.active  {
+.hole.active.moleHit  {
   transition: opacity  .5s ease-in-out;
   animation: slide-up .3s;
 }
@@ -75,6 +75,16 @@ button:hover {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-1200px);
     }
 }
 #final-score {

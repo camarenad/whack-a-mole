@@ -1,7 +1,7 @@
 
 /*----- constants -----*/ 
 var assets = {
-    moleImg:'assets/mole.png',
+    moleImg:'assets/mole.png'
 };
 /*----- app's state (variables) -----*/ 
 var hit, miss, time,gameLive;
@@ -52,9 +52,9 @@ function generateMole() {
     var removeMole = setInterval(function(){
         if(currentHole.classList.contains('active')){
             currentHole.removeChild(img);
-            currentHole.style.backgroundColor = '#55380B'
-            currentHole.classList.remove('active')
-            clearInterval(removeMole)
+            currentHole.style.backgroundColor = '#55380B';
+            currentHole.classList.remove('active');
+            clearInterval(removeMole);
         }
     },700);
 }
@@ -65,8 +65,14 @@ function handleMove() {
         miss--
     }
     if(this.classList.contains('active') && gameLive === true){
+        var self = this;
         miss -=1
         hitMsg.textContent = ` hit: ${hit++}`
+        self.className += ' moleHit';
+        var interval = setInterval(function(){
+            self.classList.remove('moleHit')
+            clearInterval(interval);
+        }, 300);
     }
 }
 function timer() {
