@@ -64,16 +64,8 @@ button:hover {
     background-color: #EFAB7D;
 }
 .hole.active  {
-  /* display: flex;
-  justify-content: center;
-  align-content: center;
-  margin: auto 0;
-  margin-bottom: 120px; */
   transition: opacity  .5s ease-in-out;
   animation: slide-up .3s;
-  /* position: relative; */
-    /* margin-top: -5vh; */
-  /* align-self:flex-start; */
 }
 @keyframes slide-up {
     0% {
@@ -85,7 +77,6 @@ button:hover {
         transform: translateY(0);
     }
 }
-
 #final-score {
     display: flex;
     justify-content: center;
@@ -104,7 +95,6 @@ button:hover {
   align-content: center;
   width: 100%;
 }
-
 img {
     margin-top: -2vh;
     margin-left: -2vh;

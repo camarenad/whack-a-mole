@@ -66,7 +66,6 @@ function handleMove() {
     }
     if(this.classList.contains('active') && gameLive === true){
         miss -=1
-        var self = this;
         hitMsg.textContent = ` hit: ${hit++}`
     }
 }
