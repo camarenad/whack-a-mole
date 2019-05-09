@@ -26,8 +26,10 @@ holeSection.addEventListener('click', missClick);
 initialize()
 
 function missClick() {
-    miss++;
-    missMsg.textContent =  `miss: ${miss}`
+    if(gameLive === true) {
+        miss++;
+        missMsg.textContent =  `miss: ${miss}`
+    }
 }
 
 function generateRandNum(min,max) {
