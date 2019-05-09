@@ -13,16 +13,22 @@ var timeMsg = document.querySelector('.time');
 var hole = document.querySelectorAll('.hole');
 var button = document.querySelectorAll('button');
 var winMsg = document.getElementById('final-score');
-var holeSection = document.getElementById('hole-section');
+var holeSection = document.getElementById('holes-section');
 
 // /*----- event listeners -----*/ 
 hole.forEach(function(element) {
     element.addEventListener('click',handleMove);
   });
 document.querySelector('button').addEventListener('click',render)
+holeSection.addEventListener('click', missClick);
 
 /*----- functions -----*/
 initialize()
+
+function missClick() {
+    miss++;
+    missMsg.textContent =  `miss: ${miss}`
+}
 
 function generateRandNum(min,max) {
     min = Math.ceil(min);
@@ -51,19 +57,19 @@ function generateMole() {
     },700);
 }
 function handleMove() {
-    if(!this.classList.contains('active') && gameLive === true){
-        console.log("miss: ", miss, "hit: ", hit)
-        missMsg.textContent = ` miss: ${miss++}`
 
+    if(!this.classList.contains('active') && gameLive === true){
+        missClick()
+        miss--
     }
     if(this.classList.contains('active') && gameLive === true){
+        miss -=1
         var self = this;
         hitMsg.textContent = ` hit: ${hit++}`
     }
 }
 function timer() {
   var startInt = setInterval(function() {
-    console.log(time)
     generateMole()
     time --
     timeMsg.textContent = ` time: ${time}`;
